@@ -1,0 +1,116 @@
+\documentclass[12pt,letterpaper,leqno]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[hang,flushmargin]{footmisc}
+\hypersetup{
+    pdftitle={Integral Table from http://integral-table.com},    % title
+    pdfauthor={Shapiro},     % author
+    pdfsubject={Table of Integrals},   % subject of the document
+    pdfcreator={pdftex},   % creator of the document
+    pdfproducer={Texmaker}, % producer of the document
+    pdfkeywords={CSUN, Integrals, Table of Integrals, Math 280, Math 351, Differential Equations}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=red,          % color of internal links
+    citecolor=red,        % color of links to bibliography
+    filecolor=red,      % color of file links
+    urlcolor=red           % color of external links
+}
+
+\newcommand{\dx}{\hspace{2pt}dx}
+\newcommand{\dd}[1]{\hspace{2pt}d#1}
+\usepackage{multicol}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\section*{Table of Basic Integrals\footnote{\copyright 2014. From  \url{http://integral-table.com}, last revised \today. This material 
+is provided as is without warranty or representation about the accuracy, correctness or suitability of this material for any purpose. This work is licensed under the Creative Commons Attribution-Noncommercial-ShareAlike United States License. }
+}
+\end{center}
+
+\begin{multicols}{2}
+
+\begin{equation}
+\int x^n \dx = \frac{1}{n+1}x^{n+1}, \hspace{1ex} n\neq-1
+\end{equation}
+
+\begin{equation}
+\int \frac{1}{x}\dx = \ln |x|
+\end{equation}
+
+\begin{equation}
+\int u \hspace{2pt} \dd{v} = uv - \int v du
+\end{equation}
+
+
+
+\begin{equation}
+\int e^x \dx = e^x 
+\end{equation}
+
+\begin{equation}
+\int a^x \dx = \frac{1}{\ln a} a^x
+\end{equation}
+
+\begin{equation}
+\int \ln x \dx = x \ln x - x
+\end{equation}
+
+
+\begin{equation}
+\int \sin x \dx = -\cos x
+\end{equation}
+
+\begin{equation}
+\int \cos x \dx = \sin x
+\end{equation}
+
+\begin{equation}
+\int \tan x \dx = \ln |\sec x| 
+\end{equation}
+
+\begin{equation}
+\int \sec x \dx = \ln |\sec x + \tan x|
+\end{equation}
+
+\begin{equation}
+\int \sec^2 x \dx = \tan x
+\end{equation}
+
+\begin{equation}
+\int \sec x \tan x \dx = \sec x
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{a^2+x^2}\dx = \tan^{-1}\frac{x}{a}
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{a^2-x^2}\dx = \frac{1}{2}\ln\left|\frac{x+a}{x-a}\right|
+\end{equation}
+
+\begin{equation}
+\int \frac{1}{\sqrt{a^2-x^2}} \dx = \sin^{-1} \frac{x}{a}
+\end{equation}
+
+\begin{equation}
+\int \frac{a}{x \sqrt{x^2-a^2}} \dx = \sec^{-1} \frac{x}{a}
+\end{equation}
+
+\begin{align}
+\int \frac{1}{\sqrt{x^2-a^2}} \dx &= \cosh^{-1} \frac{x}{a} \\&= \nonumber \ln (x+\sqrt{x^2-a^2})
+\end{align}
+
+\begin{align}
+\int \frac{1}{\sqrt{x^2+a^2}} \dx &= \sinh^{-1} \frac{x}{a} \\&=\nonumber \ln (x+\sqrt{x^2+a^2})
+\end{align}
+
+\end{multicols}
+
+\end{document}

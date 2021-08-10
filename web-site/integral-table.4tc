@@ -1,0 +1,11 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-1000}{QQ2-1-1}{\hbox to\hsize {\hss Table of Basic Integrals\hss }}}{1}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-2000}{QQ2-1-2}{Basic Forms}}{1}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-3000}{QQ2-1-3}{Integrals of Rational Functions}}{2}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-4000}{QQ2-1-4}{Integrals with Roots}}{6}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-5000}{QQ2-1-5}{Integrals with Logarithms}}{14}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-6000}{QQ2-1-6}{Integrals with Exponentials}}{20}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-7000}{QQ2-1-7}{Integrals with Trigonometric Functions}}{24}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-8000}{QQ2-1-8}{Products of Trigonometric Functions and Monomials}}{34}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-9000}{QQ2-1-9}{Products of Trigonometric Functions and Exponentials}}{39}\relax 
+\doTocEntry\toclikesection{}{\csname a:TocLink\endcsname{1}{x1-10000}{QQ2-1-10}{Integrals of Hyperbolic Functions}}{41}\relax 

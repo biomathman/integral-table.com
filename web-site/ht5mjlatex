@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+#~/bin/ht5mjlatex
+# http://www.albany.edu/~hammond/demos/Html5/arXiv/
+#
+mk4ht xhmlatex $1 "ht5mathjax"
