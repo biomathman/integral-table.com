@@ -1,0 +1,83 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{textcomp} 
+
+
+\newcommand{\AND}{\wedge}
+\newcommand{\OR}{\vee}
+
+ 
+
+\begin{document}
+\pagestyle{empty}
+
+
+
+\begin{doublespace}
+\begin{center}
+
+\vspace{.25in}
+
+\begin{LARGE}
+Table of Logical Equivalences
+
+\end{LARGE}
+\vspace{.25in}
+\fbox{
+\begin{tabular}{lcc}
+Commutative  & $p\AND q \iff q \AND p$                  & $p \OR q \iff q\OR p$ \\
+Associative  & $(p\AND q)\AND r \iff p \AND (q\AND r)$ & $(p \OR q)\OR r \iff p \OR (q \OR r)$\\
+Distributive & $p \AND (q \OR r) \iff (p \AND q) \OR (p \AND r)$ & $p \OR (q \AND r) \iff (p \OR q) \AND (p \OR r)$ \\
+Identity     & $p \AND T \iff p$                                 & $p \OR F \iff p$\\
+Negation     & $p \OR \sim p \iff T$  & $p \AND \sim p \iff F$\\
+Double Negative & $\sim (\sim p) \iff p$ \\
+Idempotent   & $p \AND p \iff p$ & $p \OR p \iff p$\\
+Universal Bound & $p \OR T \iff T$ & $p \AND F \iff F$\\
+De Morgan's  & $\sim(p \AND q) \iff (\sim p)\OR (\sim q)$ & $\sim( p \OR q ) \iff (\sim p) \AND (\sim q)$\\
+Absorption   & $p \OR (p \AND q) \iff p$ & $p \AND (p \OR q)\iff p$\\
+Conditional  & $(p \implies q) \iff (\sim p \OR q)$ & $\sim (p \implies q) \iff ( p \AND \sim q)$\\
+\end{tabular}
+}
+\end{center}
+
+\begin{center}
+\vspace{.5in}
+\begin{LARGE}
+Rules of Inference
+\end{LARGE}\vspace{.25in}
+ 
+\begin{tabular}{|ll|ll|}
+\hline
+Modus Ponens & $p\implies q$  & Modus Tollens & $p\implies q$\\
+             & $p$            &               & $\sim q$ \\ 
+             & $\therefore q$ &               & $\therefore \sim p$ \\ 
+             \hline
+Elimination  & $p \OR q$      & Transitivity  & $p \implies q$ \\
+             & $\sim q$       &               & $q \implies r$ \\
+             & $\therefore p$ &               & $\therefore p \implies r$ \\
+             \hline
+Generalization & $p \implies p\OR q$ & Specialization & $p \AND q \implies p$ \\
+               & $q \implies p\OR q$ &                & $p \AND q \implies q$ \\
+             
+\hline
+Conjunction   &  $p$                          & Contradiction Rule & $\sim p \implies F$ \\
+              &  $q$                          &                    & $\therefore p $\\
+              &  $\therefore p \AND q$        & &\\
+              \hline
+
+\end{tabular}
+ 
+\end{center}
+\end{doublespace}
+
+\vspace{1.5cm}
+\begin{small}
+\noindent \textcopyleft\ 2011 B.E.Shapiro for \href{http://integral-table.com}{integral-table.com}. This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa/3.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License}. Revised \today. 
+\end{small}
+\end{document}

@@ -1,0 +1,266 @@
+\documentclass[10pt,portrait, leqno]{article}
+\usepackage[left=.25in,right=.25in,top=.5in,bottom=.75in]{geometry} 
+%\geometry{paperwidth=11in,paperheight=8.5in}  
+%\setlength{\paperheight}{9in}
+%\setlength{\paperwidth}{6in}
+%\setlength{\paperheight}{9in}
+%\setlength{\paperwidth}{6in}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage[hang,flushmargin]{footmisc} 
+\usepackage{scalefnt}
+\usepackage{hyperref}
+\hypersetup{
+    pdftitle={Applied Differential Equations},    % title
+    pdfauthor={Shapiro},     % author
+    pdfsubject={Differential Equations},   % subject of the document
+    pdfcreator={pdftex},   % creator of the document
+    pdfproducer={Texmaker}, % producer of the document
+    pdfkeywords={Differential Equations}, % list of keywords
+    colorlinks=true,       % false: boxed links; true: colored links
+    linkcolor=blue,          % color of internal links
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue           % color of external links
+}
+\begin{document}
+\pagestyle{empty}
+ 
+\begin{center}
+\begin{LARGE}\textbf{Differential Equations Study Guide}\footnote{{\scriptsize \textcopyleft \hspace{.5ex} 2014 \hspace{.5ex} \url{http://integral-table.com}. This work is licensed under the Creative Commons Attribution --  Noncommercial -- No Derivative Works 3.0 United States License. To view a copy of this license, visit:  \url{http://creativecommons.org/licenses/by-nc-nd/3.0/us/}. This document is provided in the hope that it will be useful but without any warranty, without even the implied warranty of merchantability or fitness for a particular purpose, is provided on an ``as is" basis,  and the author has no obligations to provide corrections or modifications. The author makes no claims as to the accuracy of this document, and  it may contain errors. In no event shall the author be liable to any party for direct, indirect, special, incidental, or consequential damages, including lost profits, unsatisfactory class performance, poor grades, confusion, misunderstanding, emotional disturbance or other general malaise arising out of the use of this document, even if the author has been advised of the possibility of such damage. This document is provided free of charge and you should not have paid to obtain an unlocked PDF file. Revised: \today. }
+ }\end{LARGE}
+
+\section*{First Order Equations}
+\begin{minipage}{4in}
+\begin{align}
+\textbf{General Form of ODE:\ }& \dfrac{dy}{dx}=f(x,y)\\
+\textbf{Initial Value Problem:\ }& y'=f(x,y),\ y(x_0) = y_0
+\end{align}
+\end{minipage}
+
+\end{center}
+\vspace{1em}
+
+\begin{multicols}{2}
+\subsection*{Linear Equations}
+\begin{align}
+\textbf{General Form:\ }& y'+p(x)y=f(x)\\
+\textbf{Integrating Factor:\ }& \mu(x) = e^{\int p(x)dx}\\
+\implies & \dfrac{d}{dx}\left( \mu(x) y \right) = \mu(x) f(x)\\
+\textbf{General Solution:\ }& y=\frac{1}{\mu(x)}\left( \int \mu(x) f(x) dx + C\right)
+\end{align}
+\subsection*{Homogeneous Equations}
+\begin{align}
+\textbf{General Form:\ }& y'=f(y/x)\\
+\textbf{Substitution:\ }& y=zx \\ \implies & y'=z + xz'
+\end{align}
+The result is always separable in $z$: 
+\begin{equation}
+\dfrac{dz}{f(z)-z} = \dfrac{dx}{x}
+\end{equation}
+\subsection*{Bernoulli Equations}
+\begin{align}
+\textbf{General Form:\ }& y'+p(x)y=q(x)y^n\\
+\textbf{Substitution:\ }& z = y^{1-n}
+\end{align}
+The result is always linear in $z$:
+\begin{equation}
+ z' +(1-n)p(x) z = (1-n)q(x)
+\end{equation}
+\subsection*{Exact Equations}
+\begin{align}
+\textbf{General Form:\ }& M(x,y)dx + N(x,y)dy = 0 \\
+\textbf{Text for Exactness:\ }& \dfrac{\partial M}{\partial y}=\dfrac{\partial N}{\partial x}\\
+\textbf{Solution:\ }& \phi=C\text{ where }\\
+ M=\dfrac{\partial \phi}{\partial x}&\text{ and } N=\dfrac{\partial \phi}{\partial y}
+\end{align}
+\columnbreak
+
+\textbf{Method for Solving Exact Equations:}
+
+1. Let $\phi=\int M(x,y)dx + h(y)$
+
+2. Set $\dfrac{\partial \phi}{\partial y} = N(x,y)$
+
+3. Simplify and solve for $h(y)$. 
+
+4. Substitute the result for $h(y)$ in the expression for $\phi$ from step 1 and then set $\phi=0$. This is the solution. 
+
+Alternatively: 
+
+1. Let $\phi=\int N(x,y)dy + g(x)$
+
+2. Set $\dfrac{\partial \phi}{\partial x} = M(x,y)$
+
+3. Simplify and solve for $g(x)$. 
+
+4. Substitute the result for $g(x)$ in the expression for $\phi$ from step 1 and then set $\phi=0$. This is the solution. 
+
+\subsection*{Integrating Factors}
+\textbf{Case 1:} If $P(x,y)$ depends only on $x$, where
+\begin{equation}
+P(x,y)=\dfrac{M_y-N_x}{N} \implies \mu(y) = e^{\int P(x)dx}
+\end{equation}
+then
+\begin{equation}
+\mu(x) M(x,y) dx + \mu(x) N(x,y) dy = 0
+\end{equation}
+is exact.
+
+\textbf{Case 2:} If $Q(x,y)$ depends only on $y$, where
+\begin{equation}
+Q(x,y)=\dfrac{N_x-M_y}{M} \implies \mu(y) = e^{\int Q(y)dy}
+\end{equation}
+Then 
+\begin{equation}
+\mu(y) M(x,y) dx + \mu(y)N(x,y) dy =0
+\end{equation}
+is exact.
+
+\end{multicols}
+
+\newpage
+
+ \begin{center}\section*{Second Order Linear Equations}
+\end{center}
+
+\begin{multicols}{2}
+
+\subsection*{General Form of the Equation}
+\begin{align} 
+\text{{\textbf{General Form:} }}&
+a(t)y''+b(t)y'+c(t)y=g(t) \label{eq:general}\\
+\text{\textbf{{Homogeneous:} }}&
+a(t)y''+b(t)y'+c(t)y=0\label{eq:homog}\\
+\text{{\textbf{Standard Form:} }}&
+y''+p(t)y'+q(t)y=f(t)
+\label{eq:ODE}
+\end{align}
+%\subsection*{General Solution}
+The \textbf{general solution} of \eqref{eq:general} or \eqref{eq:ODE} is 
+\begin{equation}
+y = C_1 y_1(t) + C_2 y_2 (t) + y_p(t)
+\end{equation}
+where $y_1(t)$ and $y_2(t)$ are linearly independent solutions of \eqref{eq:homog}.
+
+\subsection*{Linear Independence and The Wronskian}
+Two functions $f(x)$ and $g(x)$ are \textbf{linearly dependent} if there exist numbers $a$ and $b$, not both zero, such that $af(x)+bg(x)=0$ for all $x$. If no such numbers exist then they are \textbf{linearly independent}.
+
+If $y_1$ and $y_2$ are two solutions of \eqref{eq:homog} then 
+\begin{align}
+\text{\textbf{Wronskian:} } & W(t) = y_1(t) y_2'(t) - y_1'(t) y_2(t)\\
+\text{\textbf{Abel's Formula:} }&W(t) = Ce^{-\int{p(t)dt}}
+\end{align}
+and the following are all equivalent: 
+\begin{enumerate}
+\item $\{y_1,y_2\}$ are linearly independent.
+\item $\{y_1,y_2\}$ are a fundamental set of solutions.
+\item $W(y_1, y_2)(t_0)\neq 0$ at some point $t_0$.
+\item $W(y_1,y_2)(t) \neq 0$ for all $t$.
+\end{enumerate}
+
+
+\subsection*{Initial Value Problem}
+%The initial value problem includes two initial conditions at the same point in time, one condition on $y(t)$ and one condition on $y'(t)$. 
+\begin{equation}
+\left\{
+\begin{array}{l}
+y''+p(t)y'+q(t)y=0\\ y(t_0)=y_0 \\ y'(t_0)=y_1
+\end{array} 
+\right.
+\end{equation}
+%The initial conditions are applied to the entire solution $y=y_h+y_p$. 
+
+
+
+\subsection*{Linear Equation: Constant Coefficients} 
+%The general form of the homogeneous equation is  
+\begin{align}
+\text{\textbf{Homogeneous: }} &ay'' + by' + cy=0 \label{eq:linearhomog}\\
+\text{\textbf{Non-homogeneous: }} &ay''+by'+cy = g(t)\label{eq:linearnonhomog}\\
+\text{\textbf{Characteristic Equation: }} &ar^2 + br + c=0\\
+\text{\textbf{Quadratic Roots: }} &r=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align}
+The solution of \eqref{eq:linearhomog} is given by: 
+\begin{align}
+\text{\textbf{Real Roots}} (r_1 \neq r_2):\  & y_h = C_1 e^{r_1 t} + C_2 e^{r_2t} \label{eq:LH1}\\
+\text{\textbf{Repeated}} (r_1 = r_2):\  & y_h = (C_1 + C_2 t)e^{r_1t}\label{eq:LH2}\\
+\text{\textbf{Complex}} (r=\alpha\pm i\beta):\ & y_H=e^{\alpha t}(C_1 \cos \beta t + C_2 \sin \beta t) \label{eq:LH3}
+\end{align}
+The solution of \eqref{eq:linearnonhomog} is $y=y_p+y_h$ where $y_h$ is given by \eqref{eq:LH1} through \eqref{eq:LH3} and $y_p$ is found by \textbf{undetermined coefficients} or \textbf{reduction of order}.
+
+%\columnbreak
+
+\begin{center}
+\textbf{Heuristics for Undetermined Coefficients\\ (Trial and Error)}
+\begin{small}
+\begin{tabular}{|l|l|}
+\hline 
+If $f(t)=$ & then guess that a particular solution $y_p=$ \\
+\hline
+$P_n(t)$ & $t^s (A_0 + A_1 t + \cdots + A_n t^n)$ \\
+\hline 
+$P_n(t)e^{at}$ & $t^s (A_0 + A_1 t + \cdots + A_n t^n)e^{at}$ \\
+\hline
+$P_n(t)e^{at}\sin bt$ & $t^s e^{at} [(A_0 + A_1 t + \cdots + A_n t^n)\cos bt$ \\
+or $P_n(t)e^{at}\cos bt$ & \ \ \ \ \ $ + (A_0 + A_1 t + \cdots + A_n t^n)\sin bt]$ \\
+\hline 
+\end{tabular}
+\end{small}
+\end{center}
+
+\subsection*{Method of Reduction of Order}
+When solving \eqref{eq:homog}, given $y_1$, then $y_2$ can be found by solving
+\begin{equation}
+y_1 y_2' - y_1'y_2 = Ce^{-\int p(t) dt}
+\end{equation}
+The solution is given by 
+\begin{equation}\label{eq:ROE}
+y_2 = y_1\int \dfrac{e^{-\int p(x) dx} dx}{y_1(x)^2}
+\end{equation}
+
+\subsection*{Method of Variation of Parameters}
+If $y_1(t)$ and $y_2(t)$ are a fundamental set of solutions to \eqref{eq:homog} then a particular solution to \eqref{eq:ODE} is 
+\begin{equation}
+y_P(t) = -y_1(t) \int \dfrac{y_2(t) f(t)}{W(t)}dt
++ y_2(t) \int \dfrac{y_1(t) f(t)}{W(t)}dt 
+\end{equation}
+
+\subsection*{Cauchy-Euler Equation}
+\begin{align}
+\text{\textbf{ODE: }} &ax^2y''+bxy'+cy=0 \label{eq:CEODE}\\
+\text{\textbf{Auxilliary Equation: }}& ar(r-1)+br+c=0\label{eq:CEODEAux}
+\end{align}
+The solutions of \eqref{eq:CEODE} depend on the roots $r_{1,2}$ of \eqref{eq:CEODEAux}: 
+\begin{align}
+\textbf{Real Roots: } &y = C_1x^{r_1} + C_2x^{r_2}\\
+\textbf{Repeated Root: } &y = C_1 x^r + C_2 x^r \ln x\\
+\textbf{Complex: } &y=x^{\alpha}[C_1\cos(\beta \ln x) + C_2 \sin (\beta \ln x)] \label{eq:comprootCEODE}
+\end{align}
+In \eqref{eq:comprootCEODE} $r_{1,2}=\alpha\pm i\beta$, where $\alpha$,$\beta\in\mathbb{R}$
+
+\vspace{-1ex}\subsection*{Series Solutions}
+\begin{equation}
+(x-x_0)^2y''+(x-x_0)p(x)y'+q(x)y=0 \label{eq:SS}
+\end{equation}
+If $x_0$ is a \textbf{regular point} of \eqref{eq:SS} then 
+\begin{equation}
+y_1(t) = (x-x_0)^n\sum_{k=0}^{\infty}a_k(x-x_k)^k
+\end{equation}
+At a \textbf{Regular Singular Point } $x_0$: 
+\begin{align}
+\textbf{Indicial Equation:}\ &r^2+(p(0)-1)r + q(0)=0 \label{eq:indicial}\\
+\textbf{First Solution: }\ &y_1=(x-x_0)^{r_1}\sum_{k=0}^{\infty}a_k(x-x_k)^k
+\end{align}
+Where $r_1$ is the larger real root if both roots of \eqref{eq:indicial}  are real or either root if the solutions are complex. 
+\end{multicols}
+\end{document}

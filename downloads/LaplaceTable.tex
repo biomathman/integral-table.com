@@ -1,0 +1,92 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[left=.5in,right=.5in,top=.5in,bottom=.5in]{geometry} 
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{textcomp} 
+\usepackage{multicol} 
+ 
+\newcounter{NumberInTable}
+\newcommand{\LTNUM}{\stepcounter{NumberInTable}{(\theNumberInTable)}}
+
+\newcommand{\Laplace}[1]{\ensuremath{\mathcal{L}{\left[#1\right]}}}
+\newcommand{\InvLap}[1]{\ensuremath{\mathcal{L}^{-1}{\left[#1\right]}}}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+\begin{LARGE}
+Table of Laplace Transforms
+\end{LARGE}
+\end{center}
+
+\vspace{2ex}
+
+\renewcommand{\arraystretch}{1.5}
+\begin{multicols}{2}
+\begin{center}
+\begin{tabbing}
+\hspace*{1.5 in}\=\hspace{1.5in}\= \kill
+$f(t)$ \> $\Laplace{f(t)}=F(s)$ \> \\ \\
+$1$       			 \> $\dfrac{1}{s}$           \>\LTNUM \\ \\
+$e^{at}f(t)$	\> $F(s-a)$	\>\LTNUM \\ \\ 
+$\mathcal{U}(t-a)$ \> $\dfrac{e^{-as}}{s}$ \>\LTNUM \\ \\
+$f(t-a)\mathcal{U}(t-a)$ \> $e^{-as}F(s)$ \>\LTNUM \\ \\
+$\delta(t)$	\> 1 \> \LTNUM \\ \\
+$\delta(t-t_0)$ \> $e^{-st_0}$ \>\LTNUM \\ \\
+$t^nf(t)$ 	\> $(-1)^n\dfrac{d^nF(s)}{ds^n}$  \>\LTNUM \\ \\
+$f'(t)$ 	\> $sF(s) - f(0)$ \>\LTNUM \\ \\
+$f^{n}(t)$ 	\> $s^nF(s) - s^{(n-1)} f(0) - $ \\ \\
+ \> $\cdots - f^{(n-1)}(0)$ \>\LTNUM \\ \\
+$\displaystyle{\int_0^t f(x)g(t-x)dx}$ \> $F(s)G(s)$ \>\LTNUM \\ \\
+$t^n$ ($n=0,1,2,\dots$)     \> $\dfrac{n!}{s^{n+1}}$    \>\LTNUM \\ \\
+$t^x$ ($x\geq-1\in\mathbb{R}$)     \> $\dfrac{\Gamma(x+1)}{s^{x+1}}$ \>\LTNUM\\ \\
+$\sin kt$ 	\> $\dfrac{k}{s^2+k^2}$ \>\LTNUM \\ \\
+$\cos kt$ 	\> $\dfrac{s}{s^2+k^2}$ \>\LTNUM \\ \\
+$e^{at}$ 	\> $\dfrac{1}{s-a}$ 	\>\LTNUM \\ \\
+$\sinh kt$	\> $\dfrac{k}{s^2-k^2}$ \>\LTNUM \\ \\
+$\cosh kt$	\> $\dfrac{s}{s^2-k^2}$ \>\LTNUM \\ \\
+$\dfrac{e^{at}-e^{bt}}{a-b}$	\> $\dfrac{1}{(s-a)(s-b)}$ \>\LTNUM\\ \\ 
+ \end{tabbing}
+ \end{center}
+
+\columnbreak
+
+\begin{center}
+\begin{tabbing}
+\hspace*{1.5in}\=\hspace{1.5in}\= \kill
+$f(t)$ \> $\Laplace{f(t)}=F(s)$ \> \\ \\
+
+$\dfrac{ae^{at}-be^{bt}}{a-b}$	\> $\dfrac{s}{(s-a)(s-b)}$ \>\LTNUM\\ \\ 
+$te^{at}$	\> $\dfrac{1}{(s-a)^2}$	\>\LTNUM \\ \\
+$t^ne^{at}$	\> $\dfrac{n!}{(s-a)^{n+1}}$	\>\LTNUM \\ \\
+$e^{at}\sin kt$	\> $\dfrac{k}{(s-a)^2+k^2}$  \>\LTNUM \\ \\
+$e^{at}\cos kt$	\> $\dfrac{s-a}{(s-a)^2+k^2}$  \>\LTNUM \\ \\
+$e^{at}\sinh kt$	\> $\dfrac{k}{(s-a)^2-k^2}$  \>\LTNUM \\ \\
+$e^{at}\cosh kt$	\> $\dfrac{s-a}{(s-a)^2-k^2}$  \>\LTNUM \\ \\
+$t\sin kt$  	\> $\dfrac{2ks}{(s^2+k^2)^2}$ \>\LTNUM \\ \\
+$t\cos kt$  	\> $\dfrac{s^2-k^2}{(s^2+k^2)^2}$ \>\LTNUM \\ \\
+$t\sinh kt$  	\> $\dfrac{2ks}{(s^2-k^2)^2}$ \>\LTNUM \\ \\
+$t\cosh kt$  	\> $\dfrac{s^2-k^2}{(s^2-k^2)^2}$ \>\LTNUM \\ \\
+$\dfrac{\sin at}{t}$	\> $\arctan \dfrac{a}{s}$ \>\LTNUM \\ \\
+$\dfrac{1}{\sqrt{\pi t}}e^{-a^2/4t}$	\> $\dfrac{e^{-a\sqrt{s}}}{\sqrt{s}}$ \> \LTNUM \\ \\
+$\dfrac{a}{2\sqrt{\pi t^3}}e^{-a^2/4t}$	\> $e^{-a\sqrt{s}}$ \> \LTNUM \\ \\
+$\text{erfc}\left(\dfrac{a}{2\sqrt{t}}\right)$ \>  $\dfrac{e^{-a\sqrt{s}}}{s}$ \> \LTNUM \\ \\
+\end{tabbing}
+\end{center}
+\end{multicols}
+
+\renewcommand{\arraystretch}{1}
+
+\vspace{2ex}
+\begin{small}
+\noindent \textcopyleft\ 2011 B.E.Shapiro for \href{http://integral-table.com}{integral-table.com}. This work is licensed under a \href{http://creativecommons.org/licenses/by-nc-sa/3.0/}{Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License}. Revised with corrections \today. 
+\end{small}
+
+\end{document}
