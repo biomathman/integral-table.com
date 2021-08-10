@@ -1,0 +1,164 @@
+\documentclass[10pt,letterpaper, landscape]{article}
+\usepackage[table]{xcolor}
+\definecolor{lightgray}{gray}{0.85}
+\usepackage[utf8]{inputenc}
+\usepackage{scalefnt}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage[left=0.25in, right=0.25in, top=0.25in, bottom=.25in]{geometry}
+%\geometry{paperwidth=15.125in,paperheight=11.6875in}
+%\setlength{\paperwidth}{15.125in}
+%\setlength{\paperheight}{11.6875in}
+
+\usepackage{url}
+
+\usepackage{multicol}
+
+\newcounter{NumberInTable}
+\newcommand{\NUM}{\stepcounter{NumberInTable}{(\theNumberInTable)}}
+%\newcommand{\Formula}[2]{{#1}\>{\ensuremath{\displaystyle{#2}}}\>\NUM}
+%\newcommand{\MFormula}[2]{{\begin{minipage}{1.5in}#1\end{minipage}}\>{\ensuremath{\displaystyle{#2}}}\>\NUM}
+
+\newcommand{\Formula}[2]{{#1}{\begin{align}{\displaystyle{#2}}\end{align}}}
+
+
+\newcommand{\SETTABS}{\hspace*{2in}\=\hspace{4.in}\=\kill}
+
+\begin{document}
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\columnseprule}{0.4pt}
+\setlength{\columnsep}{3ex}
+
+{\LARGE \begin{center}
+\textbf{Basic Statistics  Formulas}
+\end{center}}
+\begin{multicols}{3}
+{\large \textbf{Population Measures}}
+\begin{align}
+\text{Mean } \mu &= \dfrac{1}{n}\sum x_i\\
+\text{Variance } \sigma^2 &= \dfrac{1}{n}\sum(x_i-\overline{x})^2\\
+\text{Standard Deviation } \sigma&=\sqrt{\dfrac{1}{n}\sum(x_i-\overline{x})^2}
+\end{align}
+\hrulefill
+
+{\large \textbf{Sampling}}
+\begin{align}
+\text{Sample mean } \overline{x} &= \dfrac{1}{n}\sum x_i\\
+\text{Sample variance } s_x^2 &= \dfrac{1}{n-1}\sum(x_i-\overline{x})^2\\
+\text{Std. Deviation } s_x&=\sqrt{\dfrac{1}{n-1}\sum(x_i-\overline{x})^2}\\
+\text{z-score }z&=\dfrac{x-\mu}{\sigma}\\
+\text{Correlation }r&=\nonumber \\
+\dfrac{1}{n-1}\sum_{i=1}^n &\left(\dfrac{(x_i-\overline{x})}{s_x} \right) \left(\dfrac{(y_i-\overline{y})}{s_y} \right)
+\end{align}
+
+\hrulefill
+
+{\large \textbf{Linear Regression}}
+\begin{align}
+\text{Line } \hat{y}&=a+bx \\
+b&=r\dfrac{s_y}{s_x}, 
+a=\overline{y}-b\overline{x}  \\
+s &=\sqrt{\dfrac{1}{n-2}{\sum_{i=1}^n(y_i-\hat{y})^2}}\\
+SE_b &=\dfrac{s}{\sqrt{\displaystyle{\sum_{i=1}^n\left (x_i-\overline{x}\right )^2}}}\\
+\text{To test } & H_0:b=0, \text{ use }t = \dfrac{b}{SE_b} \\
+CI &= b \pm t^* SE_b
+\end{align}
+
+
+%\columnbreak
+
+{\large \textbf{Probability}}
+\begin{align}
+P(A\text{ or } B)&=P(A)+P(B)-P(A\text{ and }B)\\
+P(\text{not }A)&=1-P(A)\\
+P(A\text{ and }B)&=P(A)P(B)\text{ (independent)} \\
+P(B|A)&=P(A\text{ and } B)/{P(A)}\\
+0!=1; 
+n! &= 1\times 2 \times 3 \cdots \times (n-1)\times n\\
+\binom{n}{k}&=\dfrac{n!}{k!(n-k)!}\\
+\text{Binomial Dist}&\text{ribution}:\nonumber\\
+P(\mathcal{X}&=k)=\binom{n}{k}p^k(1-p)^{n-k}\\
+\mu&=np, \ \sigma = \sqrt{np(1-p)}
+\end{align}
+
+
+
+
+\hrulefill
+
+{\large \textbf{One-Sample z-statistic}}
+\begin{align}
+\text{To test } H_0: \mu=\mu_0\text{ use} 
+z &= \dfrac{\overline{z}-\mu_0}{\sigma/\sqrt{n}}\\
+\text{Confidence Interval for }\mu &= \overline{x}\pm z^* \dfrac{\sigma}{\sqrt{n}}\\
+\text{Margin of Error }ME &=z^* \dfrac{\sigma}{\sqrt{n}}\\
+\text{Minimum sample size }n &\geq \left[ \dfrac{z^*\sigma}{ME}\right]^2
+\end{align}
+\hrulefill
+
+{\large \textbf{One-Sample t-statistic}}
+\begin{align}
+ SEM &=\dfrac{s_x}{\sqrt{n}}, 
+\ t=\dfrac{\overline{x}-\mu}{s_x/\sqrt{n}}\\
+\text{Confidence Interval} &= \overline{x}\pm t^*\dfrac{s_x}{\sqrt{n}}
+\end{align}
+\hrulefill
+
+{\large \textbf{Two-Sample t-statistic}}
+\begin{align}
+t&=\dfrac{\overline{x}_1 -\overline{x}_2}{
+\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}}\\ 
+\text{Conf. Interval}&=
+(\overline{x}_1-\overline{x}_2)\pm t^*\sqrt{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}
+\end{align}
+
+%\columnbreak
+
+{\large \textbf{Sample Proportions}}
+\begin{align}
+\mu_{\hat{p}} &=p, \
+\sigma_{\hat{p}} = \sqrt{\dfrac{p(1-p)}{n}}\\
+\text{Conf. Int.} &= \hat{p}\pm z^*(SE)\\
+\text{SE} &=\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\\
+\text{sample size } n &> \left[\dfrac{z^*}{ME}\right]^2 p^*(1-p^*)\\
+\text{To test } H_0:p=p_0, \text{ use }  
+z &= \dfrac{\hat{p}-p_0}{\sqrt{\dfrac{p_0(1-p_0)}{n}}}
+\end{align}
+\hrulefill
+
+{\large \textbf{Two-Sample Proportions}}
+\begin{align}
+SE &= \sqrt{\dfrac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \dfrac{\hat{p}_2(1-\hat{p}_2)}{n_2}}\\
+CI &= (\hat{p}_1-\hat{p}_2)\pm z^* (SE)\\
+\text{To test }&H_0: p_1=p_2, \text{ use}\\
+z&=\dfrac{\hat{p}_1-\hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})\left(\dfrac{1}{n_1}+\dfrac{1}{n_2}\right)}} \\
+\hat{p}&=\dfrac{X_1 + X_2}{n_1 + n_2}, \ X_i = \text{ successes}
+\end{align}
+\hrulefill
+
+{\large \textbf{Chi-Square Statistic}}
+\begin{align}
+\chi^2 &= \sum_{i=1}^n\dfrac{(o_i-e_i)^2}{e_i}\\
+o_i&=\text{observed}\nonumber,
+ e_i=\text{expected}\nonumber
+\end{align}
+
+\hrulefill
+
+\Formula{\large \textbf{Central Limit Theorem}}
+{
+s_{\overline{x}} \to \dfrac{\sigma}{\sqrt{n}} \text{ as  } n\to \infty
+} 
+ 
+\end{multicols}
+\hrulefill
+
+
+{\footnotesize \textcopyleft\ 2013 B.E. Shapiro. This work is licensed under a \textit{{Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License}} (BY-NC-SA 3.0). See \url{http://creativecommons.org/licenses/by-nc-sa/3.0/} for details. Please address all corrections to \url{bruce.e.shapiro@csun.edu}. Last revised \today. \ Original PDF and \LaTeX\ files available at  \url{http://integral-table.com/}}
+\include{Normal-Table}
+
+\end{document}
